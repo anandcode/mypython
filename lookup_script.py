@@ -20,6 +20,7 @@ import pandas as pd
 
 try:   
     print(sys.argv[1])
+    \copy factbook FROM 'factbook.csv' WITH delimiter E'\t' NULL ''
 	config = read.json(sys.argv[1])
 	print(config["Config-files"]["source-path"])
     for perform in perflist:
