@@ -1,0 +1,28 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.myapp,
+    authenticationType jwt,
+    prodDatabaseType postgreSQL,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Employee {
+ id Integer
+ name String required
+ department String required
+}
+
+entity Employee_relationship{
+parent_Emp_Id Integer
+child_Emp_Id Integer
+}
+
+relationship OneToMany {
+  Employee to Employee_relationship
+}
+    
